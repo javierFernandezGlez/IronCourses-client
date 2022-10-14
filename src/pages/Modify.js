@@ -1,25 +1,40 @@
-import React from "react";
-import { useContext, useState } from 'react';
-import { AuthContext } from "../contexts/auth.context";
-import { useNavigate } from "react-router-dom";
-import { post } from "../authService/authService";
+import {useParams} from "react-router-dom";
 import {Button} from "react-bootstrap";
 import CourseName from "../components/CourseName";
 import CourseDescription from "../components/CourseDescription";
 import CourseCategory from "../components/CourseCategory";
-import CoursePublished from "../components/CoursePublished";
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from "../contexts/auth.context";
+import { useNavigate } from "react-router-dom";
+import { post } from "../authService/authService";
+import { get } from "../authService/authService";
 
-const CourseForm = () => {
-  const { authenticateUser, setIsLoading, setMessage } = 
+function Modify() {
+    const {id} = useParams();
+
+    const { authenticateUser, setIsLoading, setMessage } = 
 useContext(AuthContext)
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [published, setPublished] = useState(false);
+  const [course, setCourse] = useState({});
   const navigate = useNavigate();
 //   const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
 // [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
     
+    const getCourse = () => {
+        get(`/courses/${id}`)
+            .then(result => {
+                console.log(result);
+                setCourse(result.data);
+            })
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getCourse();
+    }, []);
+
     
   
     const checkError = (e) => {
@@ -43,7 +58,7 @@ useContext(AuthContext)
             description: description,
             category: category
         })
-        post("/courses/create-course", {
+        post(`/courses/modify/${id}`, {
             name: name,
             description: description,
             category: category
@@ -51,7 +66,7 @@ useContext(AuthContext)
             .then((results) => {
             //   localStorage.setItem("authToken", results.data.token);
             //   localStorage.setItem("id", results.data.id);
-              setMessage(`${name} course created successfully!`);
+              setMessage(`${name} course modified successfully!`);
               navigate("/created-courses");
             })
             .catch((err) => {
@@ -62,15 +77,15 @@ useContext(AuthContext)
             //   authenticateUser();
             // });
     };
-    
+
     return (
         <div className="Auth-form-container">
             <form className="Auth-form" onSubmit={checkError}>
                 <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Create new course</h3>
-                    <CourseName setName={setName} />
-                    <CourseDescription setDescription={setDescription} />
-                    <CourseCategory setCategory={setCategory} />
+                    <h3 className="Auth-form-title">Modify <i>{course.name}</i></h3>
+                    <CourseName setName={setName} name={course.name}/>
+                    <CourseDescription setDescription={setDescription} description={course.description} />
+                    <CourseCategory setCategory={setCategory} category={course.category} />
                     {/* <CoursePublished setPublished = {setPublished}/> */}
                     <div className="d-grid gap-2 mt-3">
                         <Button type="submit" className="btn btn-dark">Submit</Button>
@@ -79,6 +94,5 @@ useContext(AuthContext)
             </form>
         </div>
   );
-};
-
-export default CourseForm;
+}
+export default Modify;

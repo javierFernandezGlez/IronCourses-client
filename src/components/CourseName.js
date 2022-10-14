@@ -1,6 +1,6 @@
 import React from "react";
 
-function CourseName({setName}) {
+function CourseName({setName, name}) {
     return (
         <div className="form-group mt-3">
             <label>Name</label>
@@ -8,6 +8,7 @@ function CourseName({setName}) {
                 name="name"
                 onChange={(e) => setName(e.target.value)}
                 className="form-control mt-1"
+                placeholder={name}
             />
         </div>
     );

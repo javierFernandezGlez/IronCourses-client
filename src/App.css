@@ -1,5 +1,6 @@
 .App {
   background-color: ghostwhite;
+  height: 100rem;
 }
 
 .App-logo {
@@ -187,6 +188,7 @@ label {
 }
 
 .courses{
+  width: 100%;
   padding: 50px 0;
   background-color: #f5f5f5;
   /* border-right: 2px solid lightgray; */
@@ -212,3 +214,159 @@ h2{
   text-transform: capitalize;
   margin-bottom: 35px;
 }
+
+.content{
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+  background: rgb(5, 68, 104);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 225px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+  margin-top: 50px;
+  overflow-y: scroll;
+}
+
+.wrapper .sidebar .profile{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+  color: #ffffff;
+  margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+  color: rgb(206, 240, 253);
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper .sidebar ul li a{
+  display: block;
+  padding: 13px 30px;
+  border-bottom: 1px solid #10558d;
+  color: rgb(241, 237, 237);
+  font-size: 16px;
+  position: relative;
+  text-decoration: none;
+}
+
+.wrapper .sidebar ul li a .icon{
+  color: #dee4ec;
+  width: 30px;
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.lesson {
+  margin-left: 250px;
+  padding-top: 100px;
+}
+
+.algo-list {
+  list-style: inside;
+}
+
+.sidebar-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profile {
+  margin-top: 10px;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+  border: solid, 2px;
+  background-color: bisque;
+  margin-right: 2px;
+}
+
+.box-red {
+  height: 50px;
+  width: 50px;
+  border: solid, 2px;
+  background-color: red;
+  margin-right: 2px;
+}
+
+.visualizer {
+  margin-left: 250px ;
+  display: flex;
+  flex-direction: column;
+  padding-top: 75px;
+  height: 80%;
+  justify-content: center;
+}
+
+.array {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 250px;
+}
+
+.created {
+  padding-top: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+

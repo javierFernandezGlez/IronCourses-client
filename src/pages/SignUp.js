@@ -7,19 +7,19 @@ import ConfirmPassword from "../components/ConfirmPassword";
 import Email from "../components/Email";
 import Password from "../components/Password";
 import Username from "../components/Username";
-import {Button} from "react-bootstrap";
+import {Alert, Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 const SignUp = () => {
-  const { authenticateUser, setIsLoading, setMessage } = 
+  const { authenticateUser, setIsLoading, setMessage, message } = 
 useContext(AuthContext)
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isEducator, setIsEducator] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState(false);  const navigate = useNavigate();
 //   const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
 // [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
     
@@ -32,29 +32,35 @@ useContext(AuthContext)
 
         if (username.length < 4) {
             setMessage("username must be at least four characters");
+            setSuccessMessage(false);
             setIsLoading(false);
             return;
         }
         if (!regexExp.test(email)) { 
             setMessage("that is not a valid email address");
+            setSuccessMessage(false);
             setIsLoading(false);
             return;
         } 
         if (password.length < 6) {
             setMessage("password must be at least 6 characters");
+            setSuccessMessage(false);
             setIsLoading(false);
             return;
         } 
         if (password === "password") {
             setMessage("your password can't be 'password'");
             setIsLoading(false);
+            setSuccessMessage(false);
             return;
         } 
         if (password !== confirmPassword) {
             setMessage("your password didn't match");
+            setSuccessMessage(false);
             setIsLoading(false);
             return;
         }
+        
         console.log({
             username: username,
             password: password,
@@ -71,6 +77,7 @@ useContext(AuthContext)
               localStorage.setItem("authToken", results.data.token);
               localStorage.setItem("id", results.data.id);
               setMessage(`Welcome ${username}!`);
+              setSuccessMessage(true);
               navigate("/");
             })
             .catch((err) => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Link} from "react-router-dom";
 import { Col, Row, Button, Card } from 'react-bootstrap';
 // import { faPlay, faClock } from '@fortawesome/free-solid-svg-icons';
 
 const CourseCard = (props) => {
     
-    const {name, img, category, video, time, price} =props.course;
+    const {name, img, category, instructor} =props.course;
     
     return (
         <div>
@@ -17,18 +17,14 @@ const CourseCard = (props) => {
                     <Row className="middle-row">
                         <Col sm={8}><Row className="extra">
                             <Col sm={6}>
-                                <p className="video"><span>{video}</span></p>
+                                <p className="video"><span>{instructor}</span></p>
                             </Col>
-                            <Col sm={6}>
-                                <p className="time"> <span>{time}</span></p>
-                            </Col>
+                            
                         </Row></Col>
                         
-                        <Col sm={4} className="price">
-                        <p>{price}</p>
-                        </Col>
+                        
                     </Row>
-                    <Button className="enroll-btn btn-dark" onClick={() => props.handleAddCourse(props.course)} >Enroll Now</Button>
+                    <Button className="enroll-btn btn-dark" href="/introduction" >Enroll Now</Button>
                 </Card.Body>
             </Card>
         </div>

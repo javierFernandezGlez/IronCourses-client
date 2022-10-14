@@ -11,6 +11,20 @@ import DeleteUser from "./pages/DeleteUser";
 import Header from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CourseForm from "./pages/CourseForm";
+import SideBar from "./components/SideBar";
+import Introduction from "./pages/Introduction";
+import Insertion from "./pages/Insertion";
+import Bubble from "./pages/Bubble";
+import MergeSort from "./pages/MergeSort";
+import SortingVisualizer from "./pages/SortingVisualizer";
+import MergeVisualizer from "./pages/MergeVisualizer";
+import QuickVisualizer from "./pages/QuickVisualizer";
+import CreatedCourses from "./components/CreatedCourses";
+import Modify from "./pages/Modify";
+import AddLesson from "./pages/AddLesson";
+import CreatedLessons from "./components/CreatedLessons";
+import InsertionVisualizer from "./pages/InsertionVisualizer";
+import BubbleVisualizer from "./pages/BubbleVisualizer";
 
 const App = () => {
   const { isLoading, message } = useContext(AuthContext)
@@ -30,6 +44,18 @@ const App = () => {
         <Route element={<LoggedIn />}>
           <Route path="/create-course" element={<CourseForm/>} />
           <Route path="/delete-user" element={<DeleteUser />} />
+          <Route path="/introduction" element={<Introduction/>} />
+          <Route path="/insertion" element={<Insertion/>} />
+          <Route path="/bubble" element={<Bubble/>} />
+          <Route path="/mergesort" element={<MergeSort/>} />
+          <Route path="/insertion-visualizer" element={<InsertionVisualizer/>}/>
+          <Route path="/bubble-visualizer" element={<BubbleVisualizer/>}/>
+          <Route path="/merge-visualizer" element={<MergeVisualizer/>}/>
+          <Route path="/quick-visualizer" element={<QuickVisualizer/>}/>
+          <Route path="/created-courses" element={<CreatedCourses/>}/>
+          <Route path="/modify/:id" element={<Modify/>}/>
+          <Route path="/add-lesson/:id" element={<AddLesson/>}/>
+          <Route path="/get-lessons/:id" element={<CreatedLessons/>}/>
         </Route>
         <Route element={<NotLoggedIn />}>
           <Route path="/signup" element={<SignUp />} />

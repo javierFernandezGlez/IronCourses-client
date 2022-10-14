@@ -22,6 +22,9 @@ function Header() {
                 {user ? (
                     <NavbarCollapse className="nav-options">
                         <Nav className="ml-auto">
+                            {user.educator ? <NavLink to="/created-courses" className="nav-links">
+                                Created courses
+                            </NavLink>:<div></div>}
                             {user.educator ? <NavLink to="/create-course" className="nav-links">
                                 Create new course
                             </NavLink>:<NavLink to="/" className="nav-links">
@@ -31,7 +34,7 @@ function Header() {
                                 Home
                             </NavLink>
                             <NavLink to="/delete-user" className="nav-links">
-                                Delete User
+                                Delete Account
                             </NavLink>
                             <Button onClick={logout} className="login-btn btn-dark">
                                 Logout

@@ -9,13 +9,13 @@ import CourseDescription from "../components/CourseDescription";
 import CourseCategory from "../components/CourseCategory";
 import CoursePublished from "../components/CoursePublished";
 
-const CourseForm = () => {
+const UpdateCourse = () => {
   const { authenticateUser, setIsLoading, setMessage } = 
 useContext(AuthContext)
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [published, setPublished] = useState(false);
+  
   const navigate = useNavigate();
 //   const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
 // [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
@@ -52,7 +52,7 @@ useContext(AuthContext)
             //   localStorage.setItem("authToken", results.data.token);
             //   localStorage.setItem("id", results.data.id);
               setMessage(`${name} course created successfully!`);
-              navigate("/created-courses");
+              navigate("/");
             })
             .catch((err) => {
               setMessage(err.response.data.message);
@@ -67,7 +67,7 @@ useContext(AuthContext)
         <div className="Auth-form-container">
             <form className="Auth-form" onSubmit={checkError}>
                 <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Create new course</h3>
+                    <h3 className="Auth-form-title">Update course</h3>
                     <CourseName setName={setName} />
                     <CourseDescription setDescription={setDescription} />
                     <CourseCategory setCategory={setCategory} />
@@ -81,4 +81,4 @@ useContext(AuthContext)
   );
 };
 
-export default CourseForm;
+export default UpdateCourse;
