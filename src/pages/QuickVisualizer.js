@@ -38,12 +38,12 @@ function QuickVisualizer() {
           let partitionIndex = partition(arr, left, right)
     
         //   setState([...state, arr])
-          await politeDelay(4);
+          await politeDelay(50);
           
           await sorts(arr, left, partitionIndex - 1)
-          await politeDelay(4);
+          await politeDelay(20);
           await sorts(arr, partitionIndex + 1, right)
-          await politeDelay(4);
+          await politeDelay(20);
         }
       }
     
