@@ -59,7 +59,7 @@ useContext(AuthContext)
             //   localStorage.setItem("authToken", results.data.token);
             //   localStorage.setItem("id", results.data.id);
               setMessage(`${title} lesson created successfully!`);
-              navigate(`/get-lessons/${id}`);
+              navigate(`/created-courses`);
             })
             .catch((err) => {
               setMessage(err.response.data.message);

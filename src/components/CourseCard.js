@@ -24,7 +24,7 @@ const CourseCard = (props) => {
                         
                         
                     </Row>
-                    <Button className="enroll-btn btn-dark" href="/introduction" >Enroll Now</Button>
+                    <Link className="nav-links" to="/introduction" >Enroll Now</Link>
                 </Card.Body>
             </Card>
         </div>
