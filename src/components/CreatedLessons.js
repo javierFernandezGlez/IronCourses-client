@@ -65,15 +65,15 @@ const CreatedLessons = () => {
     
     
 
-    // const deleteCourse = index => e => {
+    const deleteLesson = index => e => {
         
-    //     post(`/courses/delete/${e.target.value}`)
-    //         .then(result => {
-    //             console.log(result);
-    //             getCourses();
-    //         })
-    //         .catch(err => console.log(err));
-    // }
+        post(`/courses/delete/${id}/${e.target.value}`)
+            .then(result => {
+                console.log(result);
+                getLessonsCallback();
+            })
+            .catch(err => console.log(err));
+    }
 
     return (
         <div className='created'>
@@ -104,13 +104,15 @@ const CreatedLessons = () => {
                             <div className="buttons">
                                 <Link to={`/modify/${course._id}`} className='nav-links'>Modify</Link>
                                 
-                                <Button className="btn-dark" value={course._id}>Delete</Button>
+                                <Button className="btn-dark" value={lesson._id} onClick={deleteLesson(index)}>Delete</Button>
                             </div>
+                            
                         </Card.Body>
                         
                     </Card>
                 );
             })}
+            <Link to={`/add-lesson/${course._id}`} className="addLesson nav-links">Add Lesson</Link>
             
         </div>
     )

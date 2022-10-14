@@ -48,13 +48,13 @@ function SideBar(props) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/quick">
+                    <Link to="/quicksort">
                         
                         <span class="item">Quick Sort</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/heap">
+                    <Link to="/heapsort">
                         
                         <span class="item">Heap Sort</span>
                     </Link>

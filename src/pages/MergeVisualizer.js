@@ -110,13 +110,13 @@ function MergeVisualizer() {
             setTimeout(() => {
               barOneStyle.backgroundColor = color;
               barTwoStyle.backgroundColor = color;
-            }, i * 4);
+            }, i * 10);
           } else {
             setTimeout(() => {
               const [barOneIdx, newHeight] = animations[i];
               const barOneStyle = arrayBars[barOneIdx].style;
               barOneStyle.height = `${newHeight*3}px`;
-            }, i * 4);
+            }, i * 10);
           }
         }
       }

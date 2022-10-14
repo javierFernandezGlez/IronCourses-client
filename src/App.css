@@ -369,4 +369,12 @@ pre code {
   justify-content: space-evenly;
 }
 
+.addLesson {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
 

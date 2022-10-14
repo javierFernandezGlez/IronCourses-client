@@ -25,6 +25,8 @@ import AddLesson from "./pages/AddLesson";
 import CreatedLessons from "./components/CreatedLessons";
 import InsertionVisualizer from "./pages/InsertionVisualizer";
 import BubbleVisualizer from "./pages/BubbleVisualizer";
+import QuickSort from "./pages/QuickSort";
+import HeapSort from "./pages/HeapSort";
 
 const App = () => {
   const { isLoading, message } = useContext(AuthContext)
@@ -48,6 +50,8 @@ const App = () => {
           <Route path="/insertion" element={<Insertion/>} />
           <Route path="/bubble" element={<Bubble/>} />
           <Route path="/mergesort" element={<MergeSort/>} />
+          <Route path="/quicksort" element={<QuickSort/>}/>
+          <Route path="/heapsort" element={<HeapSort/>}/>
           <Route path="/insertion-visualizer" element={<InsertionVisualizer/>}/>
           <Route path="/bubble-visualizer" element={<BubbleVisualizer/>}/>
           <Route path="/merge-visualizer" element={<MergeVisualizer/>}/>

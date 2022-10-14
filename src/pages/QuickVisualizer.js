@@ -38,12 +38,12 @@ function QuickVisualizer() {
           let partitionIndex = partition(arr, left, right)
     
         //   setState([...state, arr])
-          await politeDelay(100);
+          await politeDelay(4);
           
           await sorts(arr, left, partitionIndex - 1)
-          await politeDelay(1);
+          await politeDelay(4);
           await sorts(arr, partitionIndex + 1, right)
-          await politeDelay(1);
+          await politeDelay(4);
         }
       }
     
@@ -69,12 +69,12 @@ function QuickVisualizer() {
             setTimeout(() => {
                 bar1.backgroundColor = 'red'
                 setState([...state, arr])
-            }, 10)
+            }, 4)
             bar1.backgroundColor = 'bisque'
 
             setTimeout(() => {
                 setState([...state, arr])
-            }, 10)
+            }, 4)
             bar2.backgroundColor = 'red'
             bar2.backgroundColor = 'bisque'
             
@@ -100,7 +100,7 @@ function QuickVisualizer() {
             barI.backgroundColor = "bisque";
             barRight.backgroundColor = "bisque";
             setState([...state,arr]);
-        }, 100)
+        }, 4)
         
 
         
