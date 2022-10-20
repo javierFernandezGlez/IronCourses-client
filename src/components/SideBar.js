@@ -72,6 +72,9 @@ function SideBar(props) {
                     <Link to="/quick-visualizer">
                         <span class="item">Visualize Quick Sort</span>
                     </Link>
+                    <Link to="/selection-visualizer">
+                        <span class="item">Visualize Selection Sort</span>
+                    </Link>
                 </li>
             </ul>
                     </div>

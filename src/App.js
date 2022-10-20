@@ -27,6 +27,7 @@ import InsertionVisualizer from "./pages/InsertionVisualizer";
 import BubbleVisualizer from "./pages/BubbleVisualizer";
 import QuickSort from "./pages/QuickSort";
 import HeapSort from "./pages/HeapSort";
+import SelectionVisualizer from "./pages/SelectionVisualizer";
 
 const App = () => {
   const { isLoading, message } = useContext(AuthContext)
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/bubble-visualizer" element={<BubbleVisualizer/>}/>
           <Route path="/merge-visualizer" element={<MergeVisualizer/>}/>
           <Route path="/quick-visualizer" element={<QuickVisualizer/>}/>
+          <Route path="/selection-visualizer" element={<SelectionVisualizer/>}/>
           <Route path="/created-courses" element={<CreatedCourses/>}/>
           <Route path="/modify/:id" element={<Modify/>}/>
           <Route path="/add-lesson/:id" element={<AddLesson/>}/>

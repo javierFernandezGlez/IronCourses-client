@@ -9,10 +9,20 @@ function MergeVisualizer() {
     }
     
     const initialArray = randomArray(100);
+
+    const auxArray = [];
+
+    let i = 99;
+
+    while(i >= 0) {
+        auxArray.push(i);
+        i--;
+    }
     
     const [state, setState] = useState(initialArray);
     const [iterations, setIterations] = useState(0);
 
+    
     
 
     function getMergeSortAnimations(array) {
@@ -25,13 +35,7 @@ function MergeVisualizer() {
         return animations;
       }
       
-      function mergeSortHelper(
-        mainArray,
-        startIdx,
-        endIdx,
-        auxiliaryArray,
-        animations,
-      ) {
+      function mergeSortHelper(mainArray, startIdx, endIdx, auxiliaryArray, animations) {
         if (startIdx === endIdx){
             return;
         } 
@@ -41,14 +45,7 @@ function MergeVisualizer() {
         doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations);
       }
       
-      function doMerge(
-        mainArray,
-        startIdx,
-        middleIdx,
-        endIdx,
-        auxiliaryArray,
-        animations,
-      ) {
+      function doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations) {
         let k = startIdx;
         let i = startIdx;
         let j = middleIdx + 1;
