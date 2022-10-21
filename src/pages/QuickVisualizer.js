@@ -16,6 +16,60 @@ function QuickVisualizer() {
         });
       }
 
+    // function swap(arr, left, right) {
+    //   const temp = arr[left][0];
+    //   arr[left][0] = arr[right][0];
+    //   arr[right][0] = temp;
+
+    //   const temp1 = arr[left][1];
+    //   arr[left][1] = arr[right][1];
+    //   arr[right][1] = temp1;
+    // }
+
+    // async function partitionHigh(arr, low, high) {
+    //   let pivot = arr[high];
+    //   let i = low;
+
+    //   for(let j = low; j < high; j++) {
+    //     if(arr[j][0] <= pivot) {
+    //       swap(arr, i, j);
+    //       await politeDelay(100);
+    //       setState([...arr]);
+    //       i++;
+    //     }
+    //   }
+    //   swap(arr, i, high);
+    //   await politeDelay(100);
+    //   setState([...arr]);
+
+    //   return i;
+    // }
+
+    // async function quickSort() {
+    //   let stack = [];
+
+    //   let start = 0;
+    //   let end = state.length - 1;
+
+    //   stack.push({x : start, y: end});
+
+    //   while(stack.length) {
+    //     const { x, y } = stack.shift();
+
+    //     await politeDelay(100);
+    //     const PIVOT = partitionHigh(state, x, y);
+    //     await politeDelay(100);
+    //     setState([...state]);
+    //     if(PIVOT - 1 > x) {
+    //       stack.push({x: x, y: PIVOT - 1});
+    //     }
+
+    //     if(PIVOT + 1 < y) {
+    //       stack.push({x: PIVOT + 1, y: y});
+    //     }
+    //   }
+    // }
+
     const updateArray = () => {
         let array = randomArray(100);
         for(let i = 0; i < array.length; i++) {
@@ -59,12 +113,13 @@ function QuickVisualizer() {
         for (let j = left; j < right; j++) {
             
           if (arr[j] < pivot) {
-            i++
-            let temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
+            i++;
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            
     
-            let bar1 = document.getElementById(j).style
+            let bar1 = document.getElementById(j).style;
             
             setTimeout(() => {
                 bar1.backgroundColor = 'red'
@@ -90,13 +145,13 @@ function QuickVisualizer() {
 
         }
         
-        let barI = document.getElementById(i+1).style
-        let barRight = document.getElementById(right).style
+        let barI = document.getElementById(i+1).style;
+        let barRight = document.getElementById(right).style;
 
         setTimeout(() => {
-            let temp = arr[i + 1]
-            arr[i + 1] = arr[right]
-            arr[right] = temp
+            let temp = arr[i + 1];
+            arr[i + 1] = arr[right];
+            arr[right] = temp;
             barI.backgroundColor = "bisque";
             barRight.backgroundColor = "bisque";
             setState([...state,arr]);

@@ -36,44 +36,54 @@ function SideBar(props) {
                     </Link>
                 </li>
                 <li>
+                    <Link to="/insertion-visualizer">
+                        <span class="item">Visualize Insertion Sort</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/bubble">
                         
                         <span class="item">Bubble Sort</span>
                     </Link>
                 </li>
                 <li>
+                    <Link to="/bubble-visualizer">
+                        <span class="item">Visualize Bubble Sort</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/mergesort">
-                        
                         <span class="item">Merge Sort</span>
                     </Link>
                 </li>
                 <li>
+                    <Link to="/merge-visualizer">
+                        <span class="item">Visualize Merge Sort</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/quicksort">
-                        
                         <span class="item">Quick Sort</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/heapsort">
-                        
-                        <span class="item">Heap Sort</span>
-                    </Link>
-                    <Link to="/insertion-visualizer">
-                        
-                        <span class="item">Visualize Insertion Sort</span>
-                    </Link>
-                    <Link to="/bubble-visualizer">
-                        
-                        <span class="item">Visualize Bubble Sort</span>
-                    </Link>
-                    <Link to="/merge-visualizer">
-                        <span class="item">Visualize Merge Sort</span>
-                    </Link>
                     <Link to="/quick-visualizer">
                         <span class="item">Visualize Quick Sort</span>
                     </Link>
+                </li>
+                <li>
+                    <Link to="/selection">
+                        <span class="item">Selection Sort</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/selection-visualizer">
                         <span class="item">Visualize Selection Sort</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/heapsort">  
+                        <span class="item">Heap Sort</span>
                     </Link>
                 </li>
             </ul>

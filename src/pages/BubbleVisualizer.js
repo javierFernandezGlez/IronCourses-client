@@ -87,51 +87,51 @@ function BubbleVisualizer() {
         }
     }
   
-    async function merge(firstHalf, secondHalf) {
-      let n = firstHalf.length;
-      let m = secondHalf.length;
-      const finalArray = new Array(n + m);
-      let i = 0;
-      let j = 0;
-      let k = 0;
-      let count = 0;
+    // async function merge(firstHalf, secondHalf) {
+    //   let n = firstHalf.length;
+    //   let m = secondHalf.length;
+    //   const finalArray = new Array(n + m);
+    //   let i = 0;
+    //   let j = 0;
+    //   let k = 0;
+    //   let count = 0;
       
-      while(i < n && j < m) {
-        if(firstHalf[i] < secondHalf[j]) {
-          finalArray[k] = firstHalf[i];
+    //   while(i < n && j < m) {
+    //     if(firstHalf[i] < secondHalf[j]) {
+    //       finalArray[k] = firstHalf[i];
   
-          k++;
-          i++;
-        }
-        else {
-          finalArray[k] = secondHalf[j];
-          k++;
-          j++;
-        }
-      }
-      while(i < n) {
-        finalArray[k] = firstHalf[i];
-        k++;
-        i++;
-      }
-      while(j < m) {
-        finalArray[k] = secondHalf[j];
-        k++;
-        j++;
-      }
-      return finalArray;
-    }
-    function mergeSort(array) {
-      let n = array.length;
+    //       k++;
+    //       i++;
+    //     }
+    //     else {
+    //       finalArray[k] = secondHalf[j];
+    //       k++;
+    //       j++;
+    //     }
+    //   }
+    //   while(i < n) {
+    //     finalArray[k] = firstHalf[i];
+    //     k++;
+    //     i++;
+    //   }
+    //   while(j < m) {
+    //     finalArray[k] = secondHalf[j];
+    //     k++;
+    //     j++;
+    //   }
+    //   return finalArray;
+    // }
+    // function mergeSort(array) {
+    //   let n = array.length;
       
-      if(n <= 1) {
-        return array;
-      }
-      let mid = Math.floor(n/2);
-      const firstHalf = array.slice(0,mid);
-      const secondHalf = array.slice(mid);
-      return merge(mergeSort(firstHalf), mergeSort(secondHalf));
-    }
+    //   if(n <= 1) {
+    //     return array;
+    //   }
+    //   let mid = Math.floor(n/2);
+    //   const firstHalf = array.slice(0,mid);
+    //   const secondHalf = array.slice(mid);
+    //   return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+    // }
     // async function bubbleSort(arr) {
     //   let n = arr.length;
     //   let count = n - 1;

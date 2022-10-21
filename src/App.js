@@ -27,6 +27,7 @@ import InsertionVisualizer from "./pages/InsertionVisualizer";
 import BubbleVisualizer from "./pages/BubbleVisualizer";
 import QuickSort from "./pages/QuickSort";
 import HeapSort from "./pages/HeapSort";
+import Selection from "./pages/Selection";
 import SelectionVisualizer from "./pages/SelectionVisualizer";
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/bubble" element={<Bubble/>} />
           <Route path="/mergesort" element={<MergeSort/>} />
           <Route path="/quicksort" element={<QuickSort/>}/>
+          <Route path="/selection" element={<Selection/>}/>
           <Route path="/heapsort" element={<HeapSort/>}/>
           <Route path="/insertion-visualizer" element={<InsertionVisualizer/>}/>
           <Route path="/bubble-visualizer" element={<BubbleVisualizer/>}/>

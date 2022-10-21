@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Button from 'react-bootstrap/Button';
+
 import SideBar from "../components/SideBar";
 
 function MergeVisualizer() {
@@ -18,12 +19,21 @@ function MergeVisualizer() {
         auxArray.push(i);
         i--;
     }
+
+  
     
     const [state, setState] = useState(initialArray);
     const [iterations, setIterations] = useState(0);
 
     
-    
+    const updateArray = () => {
+      let array = randomArray(100);
+      for(let i = 0; i < array.length; i++) {
+          let bar = document.getElementById(i).style;
+          bar.backgroundColor = "bisque";
+      }
+      setState(array);
+  }
 
     function getMergeSortAnimations(array) {
         const animations = [];
@@ -124,7 +134,7 @@ function MergeVisualizer() {
           })}
           </div>
           <Button variant="light" onClick={() => mergeSort()}>Merge Sort</Button>
-          <Button variant="light" onClick={() => setState(initialArray)}>Generate New Array</Button>
+          <Button variant="light" onClick={() => updateArray()}>Generate New Array</Button>
         </div>
       );
     }
